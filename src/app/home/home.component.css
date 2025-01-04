@@ -1,0 +1,49 @@
+#toolbar{
+  background-color: #CF6DFB;
+}
+#header{
+  align-items: center;
+}
+#descricao{
+  font-size: large;
+}
+#participants{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+#content{
+  width: max-content;
+  height: fit-content;
+}
+#settings{
+  display: flex;
+  justify-content: flex-end;
+  /* align-items: flex-end; */
+}
+
+#buttons{
+  color:white;
+  background-color: #CF6DFB;
+  margin-left: 5px;
+}
+#logo{
+  background-image: url(./logo.png);
+  width: 1000px;
+  height: 1000px
+}
+.card {
+  background-color: #9B41EF;
+  border-radius: 10px;
+  margin: 15px;
+  align-items: center;
+  /* box-shadow: 10px 5px rgba(160, 160, 160, 0.5);*/
+
+  height: 300px;
+  width: 500px;
+  /* flex: 1; */
+}
+
+p{
+  color: white;
+}

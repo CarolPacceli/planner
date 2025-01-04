@@ -1,0 +1,30 @@
+<mat-card appearance="outlined" class="card">
+  <p id="logo"></p>
+  <mat-card-header>
+    <mat-card-title style="color: white;">Go To</mat-card-title>
+    <mat-card-title style="color: white;">Login</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-form-field class="inp_info">
+      <mat-label>Email</mat-label>
+      <input matInput class="inp_field"/>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Senha</mat-label>
+      <input matInput [type]="oculto() ? 'password' : 'text'" />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="oculto()"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="oculto()"
+      >
+        <mat-icon>{{ oculto() ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </mat-form-field>
+    <h5>Esqueceu sua senha?</h5>
+    <button mat-flat-button id="btn_entrar" (click)="redirectHome()">Entrar</button>
+    <button mat-flat-button id="btn_google">Entrar com o google</button>
+    <button mat-flat-button id="btn_entrar">Cadastre-se</button>
+  </mat-card-content>
+</mat-card>

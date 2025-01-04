@@ -1,0 +1,44 @@
+<mat-card appearance="outlined" class="card">
+  <p id="logo"></p>
+  <mat-card-header>
+    <mat-card-title style="color: white;">Go To</mat-card-title>
+    <mat-card-title style="color: white;">Cadastro</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-form-field class="inp_info">
+      <mat-label>Nome</mat-label>
+      <input matInput class="inp_field" [value]="nome"/>
+    </mat-form-field>
+    <mat-form-field class="inp_info">
+      <mat-label>Email</mat-label>
+      <input matInput class="inp_field" [value]="email"/>
+    </mat-form-field>
+    <mat-form-field class="inp_info">
+      <mat-label>Senha</mat-label>
+      <input matInput [type]="tipo1 ? 'password' : 'text'" [value]="senha"/>
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="oculto1()"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="tipo1"
+      >
+        <mat-icon>{{ tipo1 ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </mat-form-field>
+    <mat-form-field class="inp_info">
+      <mat-label>Confirmar Senha</mat-label>
+      <input matInput [type]="tipo2 ? 'password' : 'text'" [value]="c_senha" />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="oculto2()"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="tipo2"
+      >
+        <mat-icon>{{ tipo2 ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </mat-form-field>
+    <button mat-flat-button id="btn_entrar">Cadastrar</button>
+  </mat-card-content>
+</mat-card>

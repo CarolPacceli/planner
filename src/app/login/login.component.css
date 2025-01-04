@@ -1,0 +1,67 @@
+.card {
+  background-color: #CF6DFB;
+  border-radius: 10px;
+  /* margin-top: 50px; */
+  /* box-shadow: 10px 5px rgba(160, 160, 160, 0.5); */
+
+  height: 700px;
+  width: 50%;
+  /* flex: 1; */
+}
+.div_inp{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inp_info{
+  /* background-color: #EEA6FF; */
+  /* border-radius: 30px; */
+  margin-bottom: 10px;
+  /* color: white; */
+  /* border: none; */
+  /* height: 50px; */
+  width: 80%;
+}
+.inp_field{
+  border-radius: 30px;
+  width: 80%;
+}
+#btn_entrar{
+  background-color: #B500FF;
+  font-weight: bolder;
+  border-radius: 5px;
+  font-size: medium;
+  margin-top: 10px;
+  color: white;
+  border: none;
+  width: 95%;
+}
+#btn_google{
+  background-color: #EEA6FF;
+  font-weight: bolder;
+  border-radius: 5px;
+  font-size: medium;
+  margin-top: 10px;
+  color: white;
+  border: none;
+  width: 95%;
+}
+#logo{
+  width: 100px;
+  height: 100px;
+  background-image: url("../../imgs/logo.png");
+}
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: green !important;
+ }
+
+ ::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: green !important;
+}
+
+::ng-deep.mat-form-field-ripple {
+ /*change color of underline when focused*/
+ background-color: green !important;
+}
