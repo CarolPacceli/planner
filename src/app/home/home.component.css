@@ -1,5 +1,6 @@
 #toolbar{
   background-color: #CF6DFB;
+  width: 100%;
 }
 #header{
   align-items: center;
@@ -28,9 +29,9 @@
   margin-left: 5px;
 }
 #logo{
-  background-image: url(./logo.png);
-  width: 1000px;
-  height: 1000px
+  background-image: url(../../imgs/logo.png);
+  /* width: 1000px;
+  height: 1000px */
 }
 .card {
   background-color: #9B41EF;

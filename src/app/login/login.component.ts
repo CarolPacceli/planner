@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,25 +8,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-
-  tipo = false
-  router:any;
+  emailFormControl = new FormControl('', [
+    Validators.email,
+  ]);
+  tipo = false;
+  router: any;
+  email = '';
   constructor(router: Router) {
     this.router = router;
-   }
-  LoginComponent(){
-    // this.router = router;
   }
   oculto = () => {
-    this.tipo = !this.tipo
-    return this.tipo
+    this.tipo = !this.tipo;
+    return this.tipo;
   };
 
   redirectCadastro = () => {
     this.router.navigate(['cadastro']);
-  }
+  };
 
   redirectHome = () => {
+    //fazer as válidações
     this.router.navigate(['home']);
-  }
+  };
 }

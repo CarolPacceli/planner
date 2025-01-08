@@ -16,11 +16,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { CadastroComponent } from './cadastro/cadastro.component';
 
-import { ApplicationConfig } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { importProvidersFrom } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +32,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
   ],
   imports: [
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     MatFormFieldModule,
     MatGridListModule,
     MatToolbarModule,
@@ -42,6 +43,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     BrowserModule,
     MatCardModule,
     MatIconModule,
+    FormsModule,
   ],
   providers: [importProvidersFrom(HttpClientModule)],
   bootstrap: [AppComponent],
