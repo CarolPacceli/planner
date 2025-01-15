@@ -7,21 +7,21 @@
         <h2 style="text-align: center; color: white;">Cadastro</h2>
       </div>
     </mat-card-header>
-    <mat-card-content class="centering" style="padding: 50px;">
+    <mat-card-content class="centering" style="padding-left: 30px; padding-right: 30px;">
       <mat-form-field class="inp_info">
         <mat-label>Nome</mat-label>
-        <input matInput class="inp_field" [formControl]="nomeFormControl" [value]="nome"/>
+        <input matInput class="inp_field" [formControl]="nomeFormControl" [(ngModel)]="nome"/>
         <mat-error>Insira seu nome</mat-error>
       </mat-form-field>
       <mat-form-field class="inp_info">
         <mat-label>Email</mat-label>
-        <input matInput class="inp_field" [formControl]="emailFormControl" [value]="email" placeholder="Ex. viajante@gmail.com"/>
+        <input matInput class="inp_field" [formControl]="emailFormControl"  [(ngModel)]="email" placeholder="Ex. viajante@gmail.com"/>
       <mat-error>Insira um email válido, por favor</mat-error>
 
       </mat-form-field>
       <mat-form-field class="inp_info">
         <mat-label>Senha</mat-label>
-        <input matInput [type]="tipo1 ? 'password' : 'text'" [formControl]="senhaFormControl" [value]="senha"/>
+        <input matInput [type]="tipo1 ? 'password' : 'text'" [formControl]="senhaFormControl" [(ngModel)]="senha"/>
         <button
           mat-icon-button
           matSuffix
@@ -35,7 +35,7 @@
       </mat-form-field>
       <mat-form-field class="inp_info">
         <mat-label>Confirmar Senha</mat-label>
-        <input matInput [type]="tipo2 ? 'password' : 'text'" [formControl]="c_senhaFormControl" [value]="c_senha" />
+        <input matInput [type]="tipo2 ? 'password' : 'text'" [formControl]="c_senhaFormControl" [(ngModel)]="c_senha" />
         <button
           mat-icon-button
           matSuffix
@@ -46,7 +46,7 @@
           <mat-icon>{{ tipo2 ? "visibility_off" : "visibility" }}</mat-icon>
         </button>
       </mat-form-field>
-      <button mat-flat-button id="btn_entrar">Cadastrar</button>
+      <button mat-flat-button id="btn_entrar" (click)="cadastrar()">Cadastrar</button>
     </mat-card-content>
   </mat-card>
 </div>

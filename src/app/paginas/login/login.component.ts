@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { EmailValidator, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -13,9 +14,12 @@ export class LoginComponent {
   ]);
   tipo = false;
   router: any;
+  login: any;
   email = '';
-  constructor(router: Router) {
+  senha = '';
+  constructor(router: Router, login: LoginService) {
     this.router = router;
+    this.login = login;
   }
   oculto = () => {
     this.tipo = !this.tipo;
@@ -28,6 +32,11 @@ export class LoginComponent {
 
   redirectHome = () => {
     //fazer as válidações
-    this.router.navigate(['home']);
+    let user = {
+      email: this.email,
+      password: this.senha
+    }
+    this.login.userLogin(user)
+    //this.router.navigate(['home']);
   };
 }

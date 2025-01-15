@@ -9,15 +9,15 @@
         <h2 style="text-align: center; color: white">Login</h2>
       </div>
     </mat-card-header>
-    <mat-card-content class="centering" style="padding: 50px;">
+    <mat-card-content class="centering" style="padding: 30px;">
       <mat-form-field class="inp_info">
         <mat-label>Email</mat-label>
-        <input matInput class="inp_field" [formControl]="emailFormControl" [value]="email" placeholder="Ex. viajante@gmail.com"/>
+        <input matInput class="inp_field" [formControl]="emailFormControl" [(ngModel)]="email" placeholder="Ex. viajante@gmail.com"/>
         <mat-error>Insira um email válido, por favor</mat-error>
       </mat-form-field>
       <mat-form-field class="inp_info">
         <mat-label>Senha</mat-label>
-        <input matInput [type]="oculto() ? 'password' : 'text'" />
+        <input matInput [type]="oculto() ? 'password' : 'text'" [(ngModel)]="senha"/>
         <button
           mat-icon-button
           matSuffix

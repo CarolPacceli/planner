@@ -1,0 +1,52 @@
+<mat-dialog-content class="dialog">
+  <h1>Nova Viagem</h1>
+  <!-- <img src="" alt=""> -->
+    <mat-form-field id="descricao">
+      <h2>Descrição: </h2>
+      <textarea
+        id="ta_descricao"
+        matInput
+        placeholder="Escreva aqui a descrição da sua viagem"
+      ></textarea>
+    </mat-form-field>
+    <p></p>
+    <mat-form-field >
+      <button mat-button id="atividades">
+        Atividade
+        <mat-icon class="icones">add_circle</mat-icon>
+      </button>
+      <mat-selection-list #shoes>
+        <!-- @for (shoe of typesOfShoes; track shoe) { -->
+        <mat-list-option>
+          shoe
+          <mat-form-field>
+
+            <!-- <mat-label>Verbose datepicker</mat-label>
+              <p></p>
+              <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
+              <mat-datepicker #dp></mat-datepicker> -->
+          </mat-form-field>
+        </mat-list-option>
+        <mat-list-option>
+          shoe
+          <mat-form-field>
+
+            <!-- <mat-label>Verbose datepicker</mat-label>
+              <p></p>
+              <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
+              <mat-datepicker #dp></mat-datepicker> -->
+          </mat-form-field>
+        </mat-list-option>
+        <!-- } -->
+      </mat-selection-list>
+    </mat-form-field>
+    <p></p>
+  <button mat-button class="botoes">
+    Convidados
+    <mat-icon class="icones">person_add</mat-icon>
+  </button>
+  <button mat-button class="botoes">
+    Localização
+    <mat-icon class="icones">map</mat-icon>
+  </button>
+</mat-dialog-content>

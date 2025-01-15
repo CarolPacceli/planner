@@ -9,7 +9,7 @@ export interface Config {
   providedIn: 'root'
 })
 export class BaseService {
-  configUrl = 'assets/config.json';
+  configUrl = 'http://localhost:8080';
   constructor(private http: HttpClient) { }
 
   get(url: string) {

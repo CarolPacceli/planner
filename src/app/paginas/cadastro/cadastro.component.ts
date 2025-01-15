@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-
+import { CadastroService }from '../../services/cadastro.service'
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
@@ -21,6 +21,13 @@ export class CadastroComponent {
   email = '';
   senha = '';
   c_senha = '';
+
+  cadastroService: any;
+
+  constructor(cadastroService: CadastroService) {
+    this.cadastroService = cadastroService;
+   }
+
   oculto1 = () => {
     this.tipo1 = !this.tipo1;
     return this.tipo1;
@@ -37,15 +44,19 @@ export class CadastroComponent {
   cadastrar = () => {
     if (!this.nome || !this.senha || !this.c_senha || !this.email) {
       //colocar aviso aqui
+      console.log("Chegou2")
     } else if (!this.validaSenha()) {
       //colocar um aviso aqui
+      console.log("Chegou3")
     } else {
       let novo_usuario = {
-        nome: this.nome,
+        name: this.nome,
         email: this.email,
-        senha: this.senha,
+        password: this.senha,
       };
       //colocar a api de cadastro aqui
+      this.cadastroService.cadastrarUsuario(novo_usuario);
+
     }
   };
 }

@@ -1,0 +1,28 @@
+.botoes{
+  background-color: #B500FF;
+  color: white;
+}
+.icones{
+  color: white;
+}
+.dialog{
+  background-color: #EEA6FF;
+  justify-content: center;
+  align-items: center;
+}
+#descricao{
+  color: white;
+  width: 700px;
+}
+#ta_descricao{
+  height: 200px;
+  width: 100%;
+}
+#atividades{
+  color: white;
+}
+h1{
+  text-align: center;
+  color: white;
+
+}
