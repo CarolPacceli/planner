@@ -45,3 +45,10 @@
   justify-content: center;
   align-items: center;
 }
+
+#v_login{
+  float: right;
+  color: white;
+  font-weight: bold;
+  background-color: #EEA6FF;
+}
