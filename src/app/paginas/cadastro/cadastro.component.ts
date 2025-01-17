@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
 import { CadastroService }from '../../services/cadastro.service'
+import { FormControl, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
@@ -23,9 +24,11 @@ export class CadastroComponent {
   c_senha = '';
 
   cadastroService: any;
-
-  constructor(cadastroService: CadastroService) {
+  router: any;
+  
+  constructor(router: Router, cadastroService: CadastroService) {
     this.cadastroService = cadastroService;
+    this.router = router;
    }
 
   oculto1 = () => {
@@ -41,6 +44,10 @@ export class CadastroComponent {
     return false;
   };
 
+  voltar = () => {
+    this.router.navigate(['/']);
+  }
+  
   cadastrar = () => {
     if (!this.nome || !this.senha || !this.c_senha || !this.email) {
       //colocar aviso aqui
