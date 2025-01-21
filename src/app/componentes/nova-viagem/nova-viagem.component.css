@@ -1,28 +1,70 @@
-.botoes{
-  background-color: #B500FF;
+.botoes {
+  background-color: #b500ff;
+  color: white;
+  margin: 5px;
+}
+.icones {
   color: white;
 }
-.icones{
-  color: white;
-}
-.dialog{
-  background-color: #EEA6FF;
+.dialog {
+  /* background-color: #eea6ff; */
+
   justify-content: center;
   align-items: center;
 }
-#descricao{
+.inp_nova_viagem {
+  width: 80%;
+  /* background-color: #eea6ff; */
+  color: white;
+
+  height: 20px;
+  font-size: larger;
+  border: 0px;
+}
+.mff_nova_viagem{
+  width: 700px;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #eea6ff !important; */
+}
+.div_nova_viagem{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
+#descricao {
   color: white;
   width: 700px;
 }
-#ta_descricao{
-  height: 200px;
+#ta_descricao {
+  height: 100px;
   width: 100%;
 }
-#atividades{
+#atividades {
   color: white;
 }
-h1{
-  text-align: center;
+#inp_atividade_data{
+  width: 20%;
+}
+#inp_titulo_viagem{
+  /* background-color: #eea6ff; */
   color: white;
 
+  height: 20px;
+  font-size: larger;
+  border: 0px;
+}
+#mff_titulo_viagem{
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+}
+input:focus {
+  border: 0px;
+  outline: 0px;
+}
+h1 {
+  text-align: center;
+  color: white;
 }

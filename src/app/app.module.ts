@@ -25,6 +25,7 @@ import { NovaViagemComponent } from './componentes/nova-viagem/nova-viagem.compo
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatListModule } from '@angular/material/list';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatDatepickerModule,
+    MatNativeDateModule,
     MatFormFieldModule,
     MatGridListModule,
     MatToolbarModule,
@@ -53,6 +55,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatCardModule,
     MatIconModule,
     FormsModule,
+
   ],
   providers: [importProvidersFrom(HttpClientModule)],
   bootstrap: [AppComponent],

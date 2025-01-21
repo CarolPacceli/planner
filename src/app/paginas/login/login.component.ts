@@ -37,6 +37,6 @@ export class LoginComponent {
       password: this.senha
     }
     this.login.userLogin(user)
-    //this.router.navigate(['home']);
+    this.router.navigate(['home']);
   };
 }
