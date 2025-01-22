@@ -36,7 +36,9 @@ export class LoginComponent {
       email: this.email,
       password: this.senha
     }
-    this.login.userLogin(user)
+    this.login.userLogin(user).subscribe(()=>{
+
+    })
     this.router.navigate(['home']);
   };
 }

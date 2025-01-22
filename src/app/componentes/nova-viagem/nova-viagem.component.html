@@ -1,54 +1,99 @@
 <mat-dialog-content class="dialog">
   <div class="div_nova_viagem">
     <mat-form-field id="mff_titulo_viagem">
-        <input
-          matInput
-          id="inp_titulo_viagem"
-          [(ngModel)]="nova_viagem"
-          placeholder="Insira o título da Viagem"
-        />
-      </mat-form-field>
-  </div>
-    <mat-form-field id="descricao">
-      <h2>Descrição:</h2>
-      <textarea
-        placeholder="Escreva aqui a descrição da sua viagem"
-        [(ngModel)]="descricao"
-        id="ta_descricao"
+      <input
         matInput
-      >
-    </textarea>
+        id="inp_titulo_viagem"
+        [(ngModel)]="nova_viagem"
+        placeholder="Insira o título da Viagem"
+      />
     </mat-form-field>
-
+  </div>
+  <div class="div_nova_viagem">
     <mat-form-field class="mff_nova_viagem">
       <input
-        [(ngModel)]="nova_atividade.titulo"
-        placeholder="Nova atividade"
-        class="inp_nova_viagem"
-        (keydown)="criarNovaAtividade($event)"
+        [(ngModel)]="nova_viagem_data_inicial"
+        [matDatepicker]="picker"
+
         matInput
       />
-      <input matInput [matDatepicker]="picker" id="inp_atividade_data"/>
       <mat-datepicker-toggle
         matIconSuffix
         [for]="picker"
       ></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
+    <mat-form-field class="mff_nova_viagem">
+      <input
+        [(ngModel)]="nova_viagem_data_final"
+        [matDatepicker]="picker"
+        matInput
+      />
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <mat-form-field id="descricao">
+    <h2>Descrição:</h2>
+    <textarea
+      placeholder="Escreva aqui a descrição da sua viagem"
+      [(ngModel)]="descricao"
+      id="ta_descricao"
+      matInput
+    >
+    </textarea>
+  </mat-form-field>
 
-    <mat-selection-list #shoes *ngFor="let atividade of atividades">
-      <mat-list-option>
-        {{ atividade.titulo }}
-        {{atividade.data}}
-      </mat-list-option>
-    </mat-selection-list>
+  <mat-form-field class="mff_nova_viagem">
+    <input
+      [(ngModel)]="nova_atividade.titulo"
+      placeholder="Nova atividade"
+      class="inp_nova_viagem"
+      (keydown)="criarNovaAtividade($event)"
+      matInput
+    />
+    <input
+      [(ngModel)]="nova_atividade.data"
+      [matDatepicker]="picker"
+      id="inp_atividade_data"
+      matInput
+    />
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
 
-    <button mat-button class="botoes">
-      Convidados
-      <mat-icon class="icones">person_add</mat-icon>
-    </button>
-    <button mat-button class="botoes">
-      Localização
-      <mat-icon class="icones">map</mat-icon>
-    </button>
+  <mat-selection-list #shoes *ngFor="let atividade of atividades">
+    <mat-list-option>
+      {{ atividade.titulo }}
+      {{ atividade.data }}
+    </mat-list-option>
+  </mat-selection-list>
+
+  <mat-form-field class="mff_nova_viagem">
+    <input
+      [(ngModel)]="novo_convidado"
+      placeholder="Novo convidado"
+      class="inp_nova_viagem"
+      (keydown)="adicionaNovoConvidado($event)"
+      matInput
+    />
+  </mat-form-field>
+
+  <mat-selection-list #shoes *ngFor="let convidado of convidados">
+    {{ convidado }}
+  </mat-selection-list>
+
+  <button mat-button class="botoes">
+    Localização
+    <mat-icon class="icones">map</mat-icon>
+  </button>
 </mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button class="botoes" (click)="addNovaViagem()">
+    Salvar
+  <mat-icon class="icones">map</mat-icon>
+  </button>
+</mat-dialog-actions>

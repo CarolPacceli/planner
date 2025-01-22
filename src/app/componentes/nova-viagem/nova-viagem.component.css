@@ -8,6 +8,8 @@
 }
 .dialog {
   /* background-color: #eea6ff; */
+  width: 100%;
+  /* min-width: 800px; */
 
   justify-content: center;
   align-items: center;
@@ -22,7 +24,7 @@
   border: 0px;
 }
 .mff_nova_viagem{
-  width: 700px;
+  width: 100%;
   justify-content: center;
   align-items: center;
   /* background-color: #eea6ff !important; */
@@ -34,8 +36,8 @@
   width: 100%;
 }
 #descricao {
-  color: white;
-  width: 700px;
+  /* color: white; */
+  width: 100%;
 }
 #ta_descricao {
   height: 100px;

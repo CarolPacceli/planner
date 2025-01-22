@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./configuracoes.component.css']
 })
 export class ConfiguracoesComponent {
-
+email = '';
+nome = '';
+nova_senha = '''
 }
