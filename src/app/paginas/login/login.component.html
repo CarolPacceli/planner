@@ -17,8 +17,8 @@
       </mat-form-field>
       <mat-form-field class="inp_info">
         <mat-label>Senha</mat-label>
-        <input matInput [type]="oculto() ? 'password' : 'text'" [(ngModel)]="senha"/>
-        <button
+        <input matInput type="password" [(ngModel)]="senha"/>
+        <!-- <button
           mat-icon-button
           matSuffix
           (click)="oculto()"
@@ -26,9 +26,9 @@
           [attr.aria-pressed]="oculto()"
         >
           <mat-icon>{{ oculto() ? "visibility_off" : "visibility" }}</mat-icon>
-        </button>
+        </button> -->
       </mat-form-field>
-       <a id="e_senha">Esqueceu sua senha?</a>
+       <a (click)="redirectEsqueceuSenha()" id="e_senha">Esqueceu sua senha?</a>
 
       <button mat-flat-button id="btn_entrar" (click)="redirectHome()">
         Entrar

@@ -1,0 +1,36 @@
+<mat-dialog-content >
+  <h1> Lista de Convidados</h1>
+  <mat-form-field class="mff_nova_viagem">
+    <input
+      [(ngModel)]="novo_convidado.email"
+      placeholder="Novo convidado"
+      class="inp_nova_viagem placeholder"
+      (keydown)="adicionaNovoConvidado($event)"
+      matInput
+    />
+  </mat-form-field>
+
+  <mat-selection-list #shoes *ngFor="let convidado of convidados">
+    {{ convidado.name }}
+    {{ convidado.email }}
+    <button mat-button class="botoes" [disabled]="!convidado.novo" (click)="convidar(convidado.email)">
+      Convidar
+    </button>
+      Está confirmado? <mat-icon>{{ convidado.is_confirmed ?  'check_circle' : 'cancel' }} </mat-icon>
+    <!-- <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
+      (click)="removerConvidado(convidado)"
+    >
+
+    </button> -->
+  </mat-selection-list>
+</mat-dialog-content>
+<mat-dialog-actions>
+
+  <button mat-button class="botoes" (click)="sair()">
+    Fechar
+    <mat-icon class="icones">close</mat-icon>
+  </button>
+</mat-dialog-actions>

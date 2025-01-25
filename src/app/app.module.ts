@@ -26,8 +26,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatListModule } from '@angular/material/list';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { SnackbarComponent } from './componentes/snackbar/snackbar.component';
+//import { SnackbarComponent } from './componentes/snackbar/snackbar.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { EsqueceuSenhaComponent } from './paginas/esqueceu-senha/esqueceu-senha.component';
+import { ConvidadosComponent } from './componentes/convidados/convidados.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +39,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     ConfiguracoesComponent,
     CadastroComponent,
     NovaViagemComponent,
-    SnackbarComponent,
+    //SnackbarComponent,
+    EsqueceuSenhaComponent,
+    ConvidadosComponent,
   ],
   imports: [
     BrowserAnimationsModule,

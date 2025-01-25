@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { BaseService } from 'src/app/services/base.service';
 
@@ -8,6 +10,8 @@ import { BaseService } from 'src/app/services/base.service';
   styleUrls: ['./configuracoes.component.css'],
 })
 export class ConfiguracoesComponent {
+  readonly dialogRef = inject(MatDialogRef<ConfiguracoesComponent>);
+  private snackBar = inject(MatSnackBar);
   baseService: any;
   router: any;
   url = '/user';
@@ -24,11 +28,20 @@ export class ConfiguracoesComponent {
       email: this.email,
       name: this.nome,
     };
-    this.baseService.put(this.url, user).subscribe(()=>{});
+    this.baseService.put(this.url, user).subscribe((resp: any)=>{
+      localStorage.setItem('@planner.dono_nome', this.nome)
+      this.openSnackBar("Mundanças salvas com sucesso")
+    });
   };
 
   sair = () => {
     //limpar o localhost
+    localStorage.clear();
+    this.dialogRef.close();
     this.router.navigate(['']);
   };
+
+  openSnackBar(mensagem: string) {
+    this.snackBar.open(mensagem);
+  }
 }

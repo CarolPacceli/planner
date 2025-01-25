@@ -24,19 +24,24 @@
           <mat-card-title class="textos" id="nome_viagem">
             {{ viagem.title }}
           </mat-card-title>
-          <p class="textos" id="periodo_viagem">{{ viagem.starts_at }} - {{ viagem.ends_at }}</p>
+          <p class="textos" id="periodo_viagem">
+            {{ viagem.starts_at }} - {{ viagem.ends_at }}
+          </p>
         </div>
       </mat-card-header>
       <mat-card-content id="content">
         <p class="textos" id="destino">{{ viagem.destination }}</p>
         <p class="textos" id="descricao">{{ viagem.description }}</p>
-        <div id="participants">
-          <button
-            mat-flat-button
-            id="btn_convidados"
-          >
+        <div class="participants">
+          <button mat-flat-button id="btn_convidados" (click)="editarConvidados(viagem.id)">
             Convidados
             <mat-icon>account_circle</mat-icon>
+          </button>
+        </div>
+        <div class="participants">
+          <button mat-flat-button id="btn_editar_viagem" (click)="editarConvidados(viagem.id)">
+            Editar Viagem
+            <mat-icon>edit</mat-icon>
           </button>
         </div>
       </mat-card-content>
