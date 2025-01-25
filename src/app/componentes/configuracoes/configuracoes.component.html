@@ -1,34 +1,33 @@
 <mat-dialog-content class="dialog">
-  <mat-form-field class="inp_info">
-    <mat-label>Nome</mat-label>
-    <input
-      matInput
-      class="inp_field"
-      [formControl]="nomeFormControl"
-      [(ngModel)]="nome"
-    />
-  </mat-form-field>
-  <mat-form-field class="inp_info">
-    <mat-label>Email</mat-label>
-    <input
-      matInput
-      class="inp_field"
-      [(ngModel)]="email"
-      disabled
-    />
-  </mat-form-field>
-  <mat-form-field class="inp_info">
-    <mat-label>Senha</mat-label>
-    <input
-      matInput
-      class="inp_field"
-      [(ngModel)]="nova_Senha"
-    />
-  </mat-form-field>
+  <div>
+      <mat-form-field class="inp_info">
+        <mat-label>Nome</mat-label>
+        <input
+          matInput
+          class="inp_field"
+          [(ngModel)]="nome"
+        />
+      </mat-form-field>
+    </div>
+      <div>
+      <mat-form-field class="inp_info">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          class="inp_field"
+          [(ngModel)]="email"
+          disabled
+        />
+      </mat-form-field>
+
+    </div>
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button mat-button class="botoes">
+  <button mat-button class="botoes" (click)="salvar()">
     Salvar
-    <mat-icon class="icones">map</mat-icon>
+  </button>
+  <button mat-button class="botoes" (click)="sair()">
+    Sair
+    <mat-icon class="icones">cancel</mat-icon>
   </button>
 </mat-dialog-actions>

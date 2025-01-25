@@ -15,29 +15,31 @@
     <mat-icon style="color: white">settings</mat-icon>
   </button>
 </mat-toolbar>
-<mat-grid-list cols="4" rowHeight="100px">
-  <!-- @for (tile of tiles; track tile) { -->
-    <mat-grid-tile *ngFor="let viagem of Viagens"
-     ><mat-card appearance="outlined" class="card">
+
+<mat-grid-list id="grid_viagens" cols="3" rowHeight="400px">
+  <mat-grid-tile *ngFor="let viagem of Viagens">
+    <mat-card appearance="outlined" class="card">
       <mat-card-header id="header">
         <div>
-          <mat-card-title style="color: white">{{ viagem.Titulo }}</mat-card-title>
-          <p>{{ viagem.Periodo }}</p>
+          <mat-card-title class="textos" id="nome_viagem">
+            {{ viagem.title }}
+          </mat-card-title>
+          <p class="textos" id="periodo_viagem">{{ viagem.starts_at }} - {{ viagem.ends_at }}</p>
         </div>
       </mat-card-header>
       <mat-card-content id="content">
-        <p id="descricao">{{ viagem.Descricao }}</p>
+        <p class="textos" id="destino">{{ viagem.destination }}</p>
+        <p class="textos" id="descricao">{{ viagem.description }}</p>
         <div id="participants">
           <button
-            mat-icon-button
-            class="example-icon"
-            aria-label="Example icon-button with share icon"
+            mat-flat-button
+            id="btn_convidados"
           >
-            <mat-icon>share</mat-icon>
+            Convidados
+            <mat-icon>account_circle</mat-icon>
           </button>
         </div>
       </mat-card-content>
-    </mat-card></mat-grid-tile>
-  <!-- } -->
+    </mat-card>
+  </mat-grid-tile>
 </mat-grid-list>
-

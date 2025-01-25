@@ -1,50 +1,81 @@
-#toolbar{
-  background-color: #CF6DFB;
+#toolbar {
+  background-color: #cf6dfb;
   width: 100%;
+  margin-bottom: 20px;
 }
-#header{
+#header {
   align-items: center;
 }
-#descricao{
-  font-size: large;
+#descricao {
+  font-size: 25px;
+  max-width: 500px;
 }
-#participants{
-  display: flex;
+#participants {
+  /* display: flex; */
+  /* align-self: flex-end; */
+  /* display: inline-block;
   justify-content: flex-end;
-  align-items: flex-end;
+  align-items: flex-end; */
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  /* max-width: 100; */
 }
-#content{
+#content {
   width: max-content;
   height: fit-content;
 }
-#settings{
+#settings {
   display: flex;
   justify-content: flex-end;
-  /* align-items: flex-end; */
+
 }
 
-#buttons{
-  color:white;
-  background-color: #CF6DFB;
+#buttons {
+  color: white;
+  background-color: #cf6dfb;
   margin-left: 5px;
 }
-#logo{
+#btn_convidados {
+  color: white;
+  background-color: #cf6dfb;
+  margin-top: 10px;
+  max-width: 150px;
+}
+#logo {
   /* background-image: url(../../imgs/logo.png); */
   /* width: 1000px;
   height: 1000px */
 }
+#grid_viagens {
+  width: 100%;
+  height: 100%;
+}
+#nome_viagem {
+  font-size: 50px;
+  margin-bottom: 20px;
+  max-width: 500px;
+}
+#periodo_viagem {
+  font-size: 15px;
+  max-width: 500px;
+}
+#destino {
+  font-size: 35px;
+  max-width: 500px;
+}
 .card {
-  background-color: #9B41EF;
+  background-color: #9b41ef;
   border-radius: 10px;
   margin: 15px;
   align-items: center;
+  text-align: center;
   /* box-shadow: 10px 5px rgba(160, 160, 160, 0.5);*/
 
-  height: 300px;
-  width: 500px;
+  height: 350px;
+  width: 700px;
   /* flex: 1; */
 }
-
-p{
+.textos {
   color: white;
 }

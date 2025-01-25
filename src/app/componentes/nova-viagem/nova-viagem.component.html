@@ -10,37 +10,44 @@
     </mat-form-field>
   </div>
   <div class="div_nova_viagem">
-    <mat-form-field class="mff_nova_viagem">
-      <input
-        [(ngModel)]="nova_viagem_data_inicial"
-        [matDatepicker]="picker"
-
-        matInput
-      />
+    <mat-form-field id="mff_titulo_viagem">
+      <mat-date-range-input
+        [formGroup]="data_viagem"
+        [rangePicker]="picker_data_viagem"
+        [comparisonStart]="data_viagem.value.start"
+        [comparisonEnd]="data_viagem.value.end"
+      >
+        <input matStartDate placeholder="Start date" formControlName="start" />
+        <input matEndDate placeholder="End date" formControlName="end" />
+      </mat-date-range-input>
       <mat-datepicker-toggle
         matIconSuffix
-        [for]="picker"
+        [for]="picker_data_viagem"
       ></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
+      <mat-date-range-picker #picker_data_viagem></mat-date-range-picker>
     </mat-form-field>
-    <mat-form-field class="mff_nova_viagem">
+  </div>
+  <div>
+    <mat-form-field id="mff_titulo_viagem">
       <input
-        [(ngModel)]="nova_viagem_data_final"
-        [matDatepicker]="picker"
         matInput
+        placeholder="Qual o local da sua viagem?"
+        [(ngModel)]="localizacao"
+        id="inp_titulo_viagem"
+        class="placeholder"
       />
-      <mat-datepicker-toggle
-        matIconSuffix
-        [for]="picker"
-      ></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
+    <button mat-button class="botoes">
+      <!-- Se for implementar o mapa faz isso com esse botão, caso contrario é só tirar ele -->
+      <mat-icon class="icones">map</mat-icon>
+    </button>
   </div>
   <mat-form-field id="descricao">
     <h2>Descrição:</h2>
     <textarea
       placeholder="Escreva aqui a descrição da sua viagem"
       [(ngModel)]="descricao"
+      class="placeholder"
       id="ta_descricao"
       matInput
     >
@@ -55,14 +62,20 @@
       (keydown)="criarNovaAtividade($event)"
       matInput
     />
-    <input
-      [(ngModel)]="nova_atividade.data"
-      [matDatepicker]="picker"
-      id="inp_atividade_data"
-      matInput
-    />
-    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
+    <mat-date-range-input
+      [formGroup]="data_atividade"
+      [rangePicker]="picker_data_atividade"
+      [comparisonStart]="data_atividade.value.start"
+      [comparisonEnd]="data_atividade.value.end"
+    >
+      <input matStartDate placeholder="Start date" formControlName="start" />
+      <input matEndDate placeholder="End date" formControlName="end" />
+    </mat-date-range-input>
+    <mat-datepicker-toggle
+      matIconSuffix
+      [for]="picker_data_atividade"
+    ></mat-datepicker-toggle>
+    <mat-date-range-picker #picker_data_atividade></mat-date-range-picker>
   </mat-form-field>
 
   <mat-selection-list #shoes *ngFor="let atividade of atividades">
@@ -76,7 +89,7 @@
     <input
       [(ngModel)]="novo_convidado"
       placeholder="Novo convidado"
-      class="inp_nova_viagem"
+      class="inp_nova_viagem placeholder"
       (keydown)="adicionaNovoConvidado($event)"
       matInput
     />
@@ -84,16 +97,19 @@
 
   <mat-selection-list #shoes *ngFor="let convidado of convidados">
     {{ convidado }}
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
+      (click)="removerConvidado(convidado)"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
   </mat-selection-list>
-
-  <button mat-button class="botoes">
-    Localização
-    <mat-icon class="icones">map</mat-icon>
-  </button>
 </mat-dialog-content>
-<mat-dialog-actions>
+<mat-dialog-actions style="background-color: #eea6ff">
   <button mat-button class="botoes" (click)="addNovaViagem()">
     Salvar
-  <mat-icon class="icones">map</mat-icon>
+    <mat-icon class="icones">map</mat-icon>
   </button>
 </mat-dialog-actions>

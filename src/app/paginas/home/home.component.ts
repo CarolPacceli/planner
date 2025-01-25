@@ -2,11 +2,16 @@ import { Component, inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfiguracoesComponent } from 'src/app/componentes/configuracoes/configuracoes.component';
 import { NovaViagemComponent } from 'src/app/componentes/nova-viagem/nova-viagem.component';
+import { BaseService } from 'src/app/services/base.service';
 
 export interface IViagem{
-  Periodo: string;
-  Titulo: string;
-  Descricao: string;
+  title: string;
+  description: string;
+  destination: string;
+  starts_at: string;
+  ends_at: string;
+  is_confirmed: string;
+  created_at: string;
 }
 
 @Component({
@@ -16,12 +21,30 @@ export interface IViagem{
 })
 export class HomeComponent {
 readonly dialog = inject(MatDialog);
+url = '/trips/all'
 Logo: any;
+baseService: any;
 Viagens: IViagem[];
-constructor() {
-  this.Viagens = [];
- // this.Logo = require("../../imgs/logo.png");
+email_usuario: string;
+constructor(baseService: BaseService) {
+  this.Viagens = [{
+    title: "",
+    description: "",
+    destination: "",
+    starts_at: "",
+    ends_at: "",
+    is_confirmed: "",
+    created_at: "",
+  }];
+  this.baseService = baseService;
+  this.email_usuario = localStorage.getItem('@planner.dono_email') || 'varqqc@qqc.com'
+
+  // this.Logo = require("../../imgs/logo.png");
  }
+ ngOnInit() {
+  this.email_usuario = localStorage.getItem('@planner.dono_email') || 'varqqc@qqc.com'
+  this.listarViagens()
+}
 
  criarNovaViagem() {
   const dialogRef = this.dialog.open(NovaViagemComponent);
@@ -30,6 +53,12 @@ constructor() {
   //   console.log(`Dialog result: ${result}`);
   // });
 }
+  listarViagens = async () =>{
+    await this.baseService.post(this.url, this.email_usuario).subscribe((resp:any)=>{
+      this.Viagens = resp.trips;
+
+    });
+  }
 editarUsuario() {
   const dialogRef = this.dialog.open(ConfiguracoesComponent);
 

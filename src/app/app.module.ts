@@ -26,7 +26,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatListModule } from '@angular/material/list';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-
+import { SnackbarComponent } from './componentes/snackbar/snackbar.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +37,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     ConfiguracoesComponent,
     CadastroComponent,
     NovaViagemComponent,
+    SnackbarComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -44,6 +46,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatNativeDateModule,
     MatFormFieldModule,
     MatGridListModule,
+    MatSnackBarModule,
     MatToolbarModule,
     AppRoutingModule,
     MatSelectModule,
